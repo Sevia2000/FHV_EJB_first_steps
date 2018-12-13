@@ -1,0 +1,70 @@
+EJB Session Bean
+
+-> encapsulates business logic only
+-> invoked by local, remote, webservice client
+
+life cycle
+-> maintained by the application server (EJB Container)
+
+Types of Session Bean
+
+1) Stateless Session Bean
+-> doesn't maintain state of a client
+   between multiple method calls
+
+2) Stateful Session Bean
+-> maintains state of a client across multiple requests
+
+3) Singleton Session Bean
+-> One instance per application, it is shared
+   between clients and supports concurrent access
+
+>>> Stateless Session Bean
+
+business object
+represents business logic only
+(it doesn't have state (data))
+
+In other words,
+conversational state between multiple method calls
+is not maintained by the container
+in case of stateless session bean
+
+The stateless bean objects are pooled by the EJB container
+to service the request on demand.
+
+accessed by one client at a time
+concurrent access: EJB container routes each request to different instance
+
+Annotations
+1) @Stateless
+2) @PostConstruct
+3) @PreDestroy
+
+Life Cycle
+States
+=> Does not exist
+=> Ready
+
+1) Dependency Injection if any
+2) @PostConstruct callback, if any
+3) method call invoked by client
+4) @PreDestroy callback if any
+5) (garbage collection)
+
+EJB Container
+creates and maintains a pool of session bean first
+
+It injects the dependency
+
+(...)
+
+Example:
+Stateless Bean Component
+-> @Remote interface
+-> bean class
+
+Remote Client
+-> console based
+-> (no dependency injection)
+-> (dependency injection: web based client only)

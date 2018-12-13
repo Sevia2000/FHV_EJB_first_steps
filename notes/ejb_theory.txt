@@ -1,0 +1,76 @@
+EJB (enterprise java bean)
+
+- secured
+- robust
+- scalable
+
+for distributed application
+
+application server (EJB Container) such as Glassfish
+a) life cycle management
+b) security
+c) transaction management
+d) object pooling
+
+application:
+deployed on the server
+(server side component)
+
+COM (Component Object Model)
+
+When use Enterprise Java Bean?
+
+1) Application needs Remote Access
+(distributed)
+2) Application needs to be scalable
+(EJB applications supports load balancing, clustering, fall-over)
+3) Application needs encapsulated business logic
+(EJB Application is separated from presentation and persistent layer)
+
+Types of Enterprise Java Bean
+
+Session Bean
+-> contains business logic
+-> invoked local, remote, webservice
+
+Message Driven Bean
+-> contains business logic
+-> invoked by passing message
+
+Entity Bean
+-> encapsulates state that can be persisted in the database
+-> deprecated
+-> replaced with JPA (Java Persistent API)
+
+Differences RMI | EJB
+
+RMI
+middleware services such as security, transaction management, object pooling etc.
+need to be done by the java programmer.	I
+EJB
+middleware services are provided by EJB Container automatically.
+
+RMI
+is not a server-side component.
+It is not required to be deployed on the server.
+EJB
+is a server-side component, it is required to be deployed on the server.
+
+RMI
+is built on the top of socket programming.
+EJB
+technology is built on the top of RMI.
+
+EJB and Webservice
+
+Java: bean component | bean client
+Client: .net | php | etc.
+Webservices (SOAP | REST)
+
+Disadvantages
+
+1) Requires application server
+2) Requires only java client
+   (For other language client, you need to go for webservice)
+3) Complex to understand and develop ejb applications
+
