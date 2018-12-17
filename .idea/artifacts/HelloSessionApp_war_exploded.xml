@@ -8,10 +8,8 @@
           <element id="module-output" name="HelloSessionApp" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="derby" />
           <element id="library" level="project" name="gf-client" />
           <element id="library" level="project" name="Maven: Arquillian JUnit:Release" />
-          <element id="library" level="project" name="derbyrun" />
         </element>
       </element>
     </root>

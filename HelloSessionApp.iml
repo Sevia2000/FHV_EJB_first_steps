@@ -30,8 +30,6 @@
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0" level="application_server_libraries" />
     <orderEntry type="library" name="Maven: Arquillian JUnit:Release" level="project" />
     <orderEntry type="library" name="gf-client" level="project" />
-    <orderEntry type="library" name="derby" level="project" />
     <orderEntry type="library" name="jndi-properties" level="project" />
-    <orderEntry type="library" name="derbyrun" level="project" />
   </component>
 </module>
