@@ -1,8 +1,7 @@
 package com.apps;
 
-import com.beans.AdderImplRemote;
-import com.beans.IncreaseRemote;
-import com.beans.SubImplRemote;
+import com.beans.*;
+import com.pojos.TestPerson;
 
 import javax.ejb.EJB;
 import javax.naming.Context;
@@ -19,8 +18,8 @@ public class StatelessTest {
     public static void main(String[] args) throws NamingException {
 
         // environment
-        Context context = new InitialContext(GenerateEnvironment());
-        // Context context = new InitialContext();
+        // Context context = new InitialContext(GenerateEnvironment());
+        Context context = new InitialContext();
 
         // stateless EJB
         System.out.println("\nstateless EJB \n");
@@ -38,8 +37,30 @@ public class StatelessTest {
         // stateful EJB
         System.out.println("\nstateful EJB \n");
 
-        IncreaseRemote incRemote = (IncreaseRemote) context.lookup("IncBean");
+        IncreaseRemote incRemote = (IncreaseRemote) context.lookup("IncreaseBean");
         IntStream.range(1,5).forEach(x -> System.out.println("current number: " + incRemote.increaseNumber(x)));
+
+        // POJO example
+        System.out.println("\nDTO EJB example\n");
+        PersonRemote personPemote = (PersonRemote) context.lookup("PersonBean");
+
+        // get first person
+        System.out.println("First TestPerson: ");
+        personPemote.getFirstPerson().print();
+
+        // get all persons
+        System.out.println("All Persons: ");
+        personPemote.getAllPersons().forEach(TestPerson::print);
+
+        // add Thomas
+        System.out.println("Add Thomas: ");
+        TestPerson thomas = new TestPerson(100, "Thomas");
+        thomas.print();
+        personPemote.addPersonPerson(thomas);
+
+        // get last person
+        System.out.println("Last TestPerson: ");
+        personPemote.getLastPerson().print();
 
         System.out.println("\n");
     }

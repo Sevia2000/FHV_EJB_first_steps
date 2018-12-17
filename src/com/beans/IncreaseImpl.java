@@ -1,8 +1,10 @@
 package com.beans;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateful;
 
-@Stateful(mappedName = "IncBean")
+@Stateful(mappedName = "IncreaseBean")
+@Remote(IncreaseRemote.class)
 public class IncreaseImpl implements IncreaseRemote {
 
     private static final int STARTING_NUMBER = 10;
